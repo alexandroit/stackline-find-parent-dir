@@ -3,11 +3,11 @@ schema: stackline-project-memory-v1
 package: find-parent-dir
 upstream: https://github.com/thlorenz/find-parent-dir
 stackline_package: "@stackline/find-parent-dir"
-state: IMPLEMENTING
+state: PUBLISHED
 registry_scope: verdaccio-and-public-npm
-public_npm: false
-public_github: false
-docs_production: false
+public_npm: true
+public_github: true
+docs_production: true
 created: 2026-08-27
 last_updated: 2026-08-27
 ---
@@ -54,8 +54,21 @@ and generally require newer runtimes.
   the DOM;
 - the complete local `npm run verify` gate passed.
 
-Remote CI, registry publication, immutable artifact hashes, GitHub release, and
-production documentation remain pending.
+## Production release
+
+- package: `@stackline/find-parent-dir@1.0.0`;
+- npm: https://www.npmjs.com/package/@stackline/find-parent-dir;
+- Verdaccio: published from the exact same tarball as npm;
+- source: https://github.com/alexandroit/stackline-find-parent-dir;
+- release: https://github.com/alexandroit/stackline-find-parent-dir/releases/tag/stackline-v1.0.0;
+- documentation: https://alexandro.net/docs/vanilla/find-parent-dir/;
+- source and tag commit: `fccfb38681995d4621e57eab4990c24b3c050393`;
+- tarball SHA-1: `b8a1ad5593ccb28399d8daec7c1c9519f56c16a5`;
+- tarball SHA-256: `1edcc163be315f4dd89b0400ba8610e084ee80ad0f3451b39bf869f64f21bd08`;
+- npm integrity: `sha512-AQhO607IA6pi72rs7UDW/ahH7goGgDtGLYhvnLiPRYrh0ocBUQSlVyUJ/+iz4i1UHY9hDjKCsLnJKJSXqLaBQQ==`;
+- packed size: 5,253 bytes; unpacked size: 14,284 bytes; 14 files;
+- CI: https://github.com/alexandroit/stackline-find-parent-dir/actions/runs/33038906074;
+- CodeQL: https://github.com/alexandroit/stackline-find-parent-dir/actions/runs/33038905941.
 
 ## Chronological log
 
@@ -67,3 +80,7 @@ production documentation remain pending.
   compatibility tests were implemented.
 - 2026-08-27: package shape, documentation, visual QA, signatures, audits, and
   all local release gates passed.
+- 2026-08-27: remote Node 12-24, Linux, macOS, Windows, TypeScript 3.9,
+  full-quality, and CodeQL gates passed; one immutable artifact was published
+  to Verdaccio and official npm; GitHub release, public docs, catalog, and both
+  aggregate sitemaps were verified.
