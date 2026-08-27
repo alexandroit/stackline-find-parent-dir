@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@stackline/find-parent-dir - Maintained parent directory lookup</title>
+  <meta name="description" content="A zero-dependency find-parent-dir compatibility package with callback, sync, Promise, ESM, CommonJS, and TypeScript support.">
+  <meta name="keywords" content="find parent directory, Node.js filesystem, find-parent-dir, package.json lookup, monorepo root, TypeScript">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="Stackline Maintainers">
+  <link rel="canonical" href="https://alexandro.net/docs/vanilla/find-parent-dir/">
+  <link rel="alternate" type="text/plain" href="./llms.txt" title="LLM summary">
+  <link rel="alternate" type="text/plain" href="./llms-full.txt" title="LLM reference">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@stackline/find-parent-dir">
+  <meta property="og:description" content="Maintained parent directory lookup with exact compatibility paths and correct filesystem errors.">
+  <meta property="og:url" content="https://alexandro.net/docs/vanilla/find-parent-dir/">
+  <meta property="og:image" content="https://alexandro.net/docs/vanilla/find-parent-dir/assets/find-parent-dir-terminal.png">
+  <meta property="og:image:alt" content="A parent directory traversal resolving the nearest package.json">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@stackline/find-parent-dir">
+  <meta name="twitter:description" content="Callback, sync, Promise, ESM, CommonJS, and TypeScript with zero runtime dependencies.">
+  <meta name="twitter:image" content="https://alexandro.net/docs/vanilla/find-parent-dir/assets/find-parent-dir-terminal.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./analytics.js"></script>
+  <script defer src="./app.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "@stackline/find-parent-dir",
+    "version": "{{PACKAGE_VERSION}}",
+    "description": "Find the nearest parent containing a file or directory with callback, sync, and Promise APIs.",
+    "codeRepository": "https://github.com/alexandroit/stackline-find-parent-dir",
+    "downloadUrl": "https://www.npmjs.com/package/@stackline/find-parent-dir",
+    "license": "https://github.com/alexandroit/stackline-find-parent-dir/blob/main/LICENSE",
+    "programmingLanguage": ["JavaScript", "TypeScript"],
+    "runtimePlatform": "Node.js 12 through 24",
+    "url": "https://alexandro.net/docs/vanilla/find-parent-dir/"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#planner">Skip to traversal planner</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="@stackline/find-parent-dir home">
+      <span class="brand-mark" aria-hidden="true">../</span>
+      <span>@stackline/find-parent-dir</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#planner">Planner</a>
+      <a href="#contract">Contract</a>
+      <a href="#api">API</a>
+      <a href="#proof">Verification</a>
+      <a href="https://github.com/alexandroit/stackline-find-parent-dir">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="product-intro" aria-labelledby="page-title">
+      <div class="intro-content">
+        <p class="eyebrow">Node.js filesystem utility</p>
+        <h1 id="page-title">@stackline/find-parent-dir</h1>
+        <p>Find the nearest parent containing a file or directory. Keep the established callback and sync API, or use native ESM and Promise support with correct filesystem errors.</p>
+        <div class="install-row">
+          <code id="install-command">npm install @stackline/find-parent-dir</code>
+          <button type="button" class="compact-button" data-copy="#install-command">Copy install</button>
+        </div>
+        <div class="release-line">
+          <span>v{{PACKAGE_VERSION}}</span>
+          <span>zero runtime dependencies</span>
+          <span>Node.js 12-24</span>
+          <span>TypeScript 3.9+</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-band" id="planner" aria-labelledby="planner-title">
+      <div class="section-inner wide">
+        <div class="section-heading">
+          <div><p class="eyebrow dark">Executable example builder</p><h2 id="planner-title">Traversal planner</h2></div>
+        </div>
+        <div class="control-bar path-controls">
+          <label><span>Module</span><select id="module-style"><option value="esm">ESM</option><option value="commonjs">CommonJS</option></select></label>
+          <label><span>API</span><select id="api-style"><option value="promise">Promise</option><option value="callback">Callback</option><option value="sync">Synchronous</option></select></label>
+          <label><span>Start path</span><input id="start-path" value="/workspace/apps/web/src/features"></label>
+          <label><span>Clue</span><input id="clue" value="package.json"></label>
+          <button type="button" class="primary-button" id="generate-button">Generate</button>
+        </div>
+
+        <div class="workspace-grid path-workspace">
+          <section class="editor-panel output-panel" aria-labelledby="candidate-title">
+            <header><h3 id="candidate-title">Distinct candidate paths</h3><span>nearest first</span></header>
+            <pre id="candidate-output"><code></code></pre>
+          </section>
+          <section class="editor-panel output-panel" aria-labelledby="program-title">
+            <header><h3 id="program-title">Generated program</h3><button type="button" class="text-button" data-copy="#result-output">Copy code</button></header>
+            <pre id="result-output"><code></code></pre>
+          </section>
+        </div>
+        <div class="status-bar" aria-live="polite">
+          <span class="status-indicator"></span><strong id="status-text">Traversal plan ready</strong>
+          <span class="status-separator"></span><span id="candidate-fact"></span>
+          <span class="status-separator"></span><span id="separator-fact"></span>
+          <span class="status-separator"></span><span id="result-fact"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-band" id="contract" aria-labelledby="contract-title">
+      <div class="section-inner content-grid">
+        <div>
+          <p class="eyebrow dark">Compatibility boundary</p>
+          <h2 id="contract-title">Textual traversal stays textual.</h2>
+          <p>The supplied path is checked first, then reduced one path part at a time. Results retain upstream separators and symlink aliases; the implementation does not call <code>realpath</code> or normalize the returned directory.</p>
+        </div>
+        <div class="code-surface">
+          <pre><code>findParentDir(start, clue, callback)
+findParentDir.sync(start, clue)
+findParentDir.promise(start, clue)</code></pre>
+          <p><code>ENOENT</code> and <code>ENOTDIR</code> continue traversal. Access denial, symlink loops, and other filesystem errors stop at the failing boundary and retain the original error object.</p>
+          <a class="inline-link" href="./guides/compatibility.md">Read the complete compatibility contract</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-band muted" id="api" aria-labelledby="api-title">
+      <div class="section-inner">
+        <div class="section-heading"><div><p class="eyebrow dark">Public surface</p><h2 id="api-title">Three APIs, one traversal contract</h2></div></div>
+        <div class="api-table-wrapper">
+          <table>
+            <thead><tr><th scope="col">API</th><th scope="col">Result</th><th scope="col">Error</th><th scope="col">Availability</th></tr></thead>
+            <tbody>
+              <tr><td><code>findParentDir(start, clue, cb)</code></td><td><code>cb(null, directory | null)</code></td><td><code>cb(error)</code></td><td>Historical</td></tr>
+              <tr><td><code>findParentDir.sync(start, clue)</code></td><td><code>string | null</code></td><td>throws</td><td>Historical</td></tr>
+              <tr><td><code>findParentDir.promise(start, clue)</code></td><td><code>Promise&lt;string | null&gt;</code></td><td>rejects</td><td>Additive</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-band" id="proof" aria-labelledby="proof-title">
+      <div class="section-inner proof-grid">
+        <div><p class="eyebrow dark">Release evidence</p><h2 id="proof-title">Compatibility is measured.</h2><p>The release gate checks behavior, package shape, compiler boundaries, platforms, and the installed artifact.</p></div>
+        <dl class="proof-list">
+          <div><dt>600</dt><dd>differential path searches against the frozen upstream release</dd></div>
+          <div><dt>100%</dt><dd>core statements, branches, functions, and lines</dd></div>
+          <div><dt>3 OS</dt><dd>Linux, macOS, and Windows filesystem behavior in CI</dd></div>
+          <div><dt>0</dt><dd>runtime dependencies in the published package</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="content-band muted" aria-labelledby="migration-title">
+      <div class="section-inner content-grid">
+        <div><p class="eyebrow dark">Drop-in adoption</p><h2 id="migration-title">Keep existing imports.</h2><p>Use an npm alias when changing application source is not desirable. The installed implementation is Stackline while the dependency key remains <code>find-parent-dir</code>.</p></div>
+        <div class="code-surface">
+          <pre id="alias-command"><code>npm install find-parent-dir@npm:@stackline/find-parent-dir</code></pre>
+          <button type="button" class="compact-button" data-copy="#alias-command">Copy alias install</button>
+          <a class="inline-link" href="./guides/migration.md">Open the migration guide</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-band" aria-labelledby="resources-title">
+      <div class="section-inner resource-grid">
+        <div><p class="eyebrow">Inspect the release</p><h2 id="resources-title">Source, package, license, and machine-readable docs</h2></div>
+        <nav aria-label="Release resources">
+          <a href="https://www.npmjs.com/package/@stackline/find-parent-dir">npm</a>
+          <a href="https://github.com/alexandroit/stackline-find-parent-dir">GitHub</a>
+          <a href="https://github.com/alexandroit/stackline-find-parent-dir/blob/main/LICENSE">MIT license</a>
+          <a href="./llms-full.txt">LLM reference</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>@stackline/find-parent-dir</strong><span>Independent maintained continuation of find-parent-dir.</span></div>
+    <nav aria-label="Footer navigation"><a href="./guides/third-party-licenses.md">Attribution</a><a href="https://alexandro.net/docs/open-source/">Stackline catalog</a></nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+# @stackline/find-parent-dir {{PACKAGE_VERSION}}
+
+Canonical documentation: https://alexandro.net/docs/vanilla/find-parent-dir/
+Source: https://github.com/alexandroit/stackline-find-parent-dir
+License: MIT with the original copyright notice preserved.
+
+## Selection
+
+Use this package when existing code depends on the callback or synchronous
+`find-parent-dir` API, historical deep imports, TypeScript 3.9, or Node.js 12.
+For greenfield ESM-only Node.js 20 applications, `find-up` can be a reasonable
+alternative when its different API is acceptable.
+
+## API
+
+- `findParentDir(start, clue, callback)` returns the first matching parent or
+  `null` through `callback(error, directory)`.
+- `findParentDir.sync(start, clue)` returns the first matching parent or `null`.
+- `findParentDir.promise(start, clue)` resolves to the first matching parent or
+  `null`.
+- ESM exports: default, `findParentDir`, `sync`, and `promise`.
+
+Traversal is textual and does not resolve symlinks. Missing candidates with
+`ENOENT` or `ENOTDIR` continue upward. Other errors retain their identity and
+stop traversal.
+
+## Compatibility evidence
+
+- 5 adapted upstream tests;
+- 10 targeted path and error regressions;
+- 600 differential path searches against `find-parent-dir@0.3.1`;
+- 100% core statements, branches, functions, and lines;
+- Linux, macOS, Windows, Node.js 12 through 24;
+- CommonJS, ESM, root and historical deep imports;
+- TypeScript 3.9 and current compilers;
+- direct and npm-alias packed installs;
+- zero runtime dependencies.
+
+## Migration
+
+Install `find-parent-dir@npm:@stackline/find-parent-dir` to preserve existing
+source imports. Access errors that upstream silently treated as missing are now
+reported according to the upstream documented contract.

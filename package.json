@@ -1,19 +1,100 @@
 {
-  "name": "find-parent-dir",
-  "version": "0.3.1",
-  "description": "Finds the first parent directory that contains a given file or directory.",
-  "main": "index.js",
+  "name": "@stackline/find-parent-dir",
+  "version": "1.0.0",
+  "description": "Find the nearest parent containing a file or directory with callback, sync, and Promise APIs",
+  "type": "commonjs",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./index.d.mts",
+        "require": "./index.d.cts",
+        "default": "./index.d.ts"
+      },
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./index": {
+      "types": {
+        "import": "./index.d.mts",
+        "require": "./index.d.cts",
+        "default": "./index.d.ts"
+      },
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./index.js": {
+      "types": {
+        "import": "./index.d.mts",
+        "require": "./index.d.cts",
+        "default": "./index.d.ts"
+      },
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "index.d.cts",
+    "index.d.mts",
+    "examples",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_LICENSES.md"
+  ],
   "scripts": {
-    "test": "tap test/*.js"
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "lint": "eslint index.js index.mjs scripts test docs-site",
+    "test:upstream": "node --test test/upstream.test.js",
+    "test:compatibility": "node --test test/compatibility.test.js",
+    "test:differential": "node test/differential.js",
+    "test:esm": "node test/esm.mjs",
+    "test:types": "node node_modules/typescript-3-9/bin/tsc -p test/types/tsconfig.legacy.json && node node_modules/typescript/bin/tsc -p test/types/tsconfig.commonjs.json && node node_modules/typescript/bin/tsc -p test/types/tsconfig.modern.json",
+    "test:runtime": "node test/runtime-compat.js",
+    "test": "npm run test:upstream && npm run test:compatibility && npm run test:differential && npm run test:esm && npm run test:types && npm run test:runtime",
+    "test:coverage": "c8 --all --include=index.js --check-coverage --lines 100 --functions 100 --branches 100 node --test test/upstream.test.js test/compatibility.test.js",
+    "test:smoke": "node scripts/smoke-install.mjs",
+    "test:registry": "node scripts/smoke-registry.mjs",
+    "test:docs": "npm run docs:build && node scripts/check-docs.mjs",
+    "check:package": "publint && attw --pack .",
+    "pack:check": "npm pack --dry-run",
+    "audit:dependencies": "npm audit --omit=dev --audit-level=low",
+    "audit:signatures": "npm audit signatures",
+    "docs:build": "npm run build && node scripts/build-docs.mjs",
+    "docs:serve": "node scripts/serve-docs.mjs",
+    "verify": "npm run clean && npm run lint && npm run build && npm test && npm run test:coverage && npm run test:smoke && npm run check:package && npm run pack:check && npm run test:docs && npm run audit:dependencies",
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/find-parent-dir.git"
+    "url": "git+https://github.com/alexandroit/stackline-find-parent-dir.git"
   },
-  "homepage": "https://github.com/thlorenz/find-parent-dir",
-  "dependencies": {},
+  "homepage": "https://alexandro.net/docs/vanilla/find-parent-dir/",
+  "bugs": {
+    "url": "https://github.com/alexandroit/stackline-find-parent-dir/issues"
+  },
   "devDependencies": {
-    "tap": "~0.4.3"
+    "@arethetypeswrong/cli": "0.18.5",
+    "@eslint/js": "10.0.1",
+    "c8": "12.0.0",
+    "eslint": "10.9.1",
+    "find-parent-dir-baseline": "npm:find-parent-dir@0.3.1",
+    "publint": "0.3.24",
+    "typescript": "7.0.2",
+    "typescript-3-9": "npm:typescript@3.9.10"
   },
   "keywords": [
     "find",
@@ -21,15 +102,21 @@
     "dir",
     "root",
     "resolve",
-    "walk"
+    "walk",
+    "filesystem",
+    "typescript",
+    "zero-dependency",
+    "stackline"
   ],
-  "author": {
-    "name": "Thorsten Lorenz",
-    "email": "thlorenz@gmx.de",
-    "url": "http://thlorenz.com"
-  },
+  "author": "Stackline Maintainers",
+  "contributors": [
+    "Thorsten Lorenz"
+  ],
   "license": "MIT",
-  "engine": {
-    "node": ">=0.6"
+  "engines": {
+    "node": ">=12"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

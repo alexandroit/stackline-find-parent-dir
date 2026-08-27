@@ -1,0 +1,22 @@
+# @stackline/find-parent-dir
+
+> Maintained, zero-dependency `find-parent-dir` compatibility package with
+> callback, sync, Promise, CommonJS, ESM, and TypeScript APIs.
+
+Install:
+
+```bash
+npm install @stackline/find-parent-dir
+```
+
+Keep historical imports:
+
+```bash
+npm install find-parent-dir@npm:@stackline/find-parent-dir
+```
+
+- Documentation: https://alexandro.net/docs/vanilla/find-parent-dir/
+- Migration: https://alexandro.net/docs/vanilla/find-parent-dir/guides/migration.md
+- Compatibility: https://alexandro.net/docs/vanilla/find-parent-dir/guides/compatibility.md
+- npm: https://www.npmjs.com/package/@stackline/find-parent-dir
+- Source: https://github.com/alexandroit/stackline-find-parent-dir
