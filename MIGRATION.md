@@ -20,7 +20,7 @@ The equivalent `package.json` entry is:
 ```json
 {
   "dependencies": {
-    "find-parent-dir": "npm:@stackline/find-parent-dir@^1.0.0"
+    "find-parent-dir": "npm:@stackline/find-parent-dir@^1.0.1"
   }
 }
 ```
