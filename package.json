@@ -1,6 +1,6 @@
 {
   "name": "@stackline/find-parent-dir",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Find the nearest parent containing a file or directory with callback, sync, and Promise APIs",
   "type": "commonjs",
   "main": "./index.js",

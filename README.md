@@ -4,13 +4,13 @@
 
 [![npm version](https://img.shields.io/npm/v/@stackline/find-parent-dir.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/find-parent-dir)
 [![license](https://img.shields.io/npm/l/@stackline/find-parent-dir.svg?style=flat-square)](https://github.com/alexandroit/stackline-find-parent-dir)
-[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-find-parent-dir-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-find-parent-dir)
+[![GitHub repository](https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-find-parent-dir)
 [![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/find-parent-dir/)
 [![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
 **[Documentation](https://alexandro.net/docs/vanilla/find-parent-dir/)** | **[npm](https://www.npmjs.com/package/@stackline/find-parent-dir)** | **[Issues](https://github.com/alexandroit/stackline-find-parent-dir/issues)** | **[Repository](https://github.com/alexandroit/stackline-find-parent-dir)**
 
-**Current package version:** `1.0.2`
+**Current package version:** `1.0.3`
 
 ---
 
@@ -25,7 +25,7 @@ TypeScript support.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/find-parent-dir@1.0.2` |
+| Package | `@stackline/find-parent-dir@1.0.3` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | ES module entry | `./index.mjs` |
