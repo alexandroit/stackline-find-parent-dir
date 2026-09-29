@@ -1,0 +1,32 @@
+{
+  "repository": "alexandroit/stackline-find-parent-dir",
+  "packages": [
+    {
+      "name": "@stackline/find-parent-dir",
+      "path": "README.md",
+      "version": "1.0.2",
+      "baselineVersion": "1.0.1",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "find-parent-dir",
+        "typescript",
+        "nodejs",
+        "find",
+        "parent",
+        "dir",
+        "root",
+        "resolve",
+        "walk",
+        "filesystem",
+        "zero-dependency",
+        "parent-directory"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/find-parent-dir/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/find-parent-dir/-/find-parent-dir-1.0.1.tgz",
+      "baselineIntegrity": "sha512-IRlKtrFa53NlUMqTSQG1jBsd+Dxz8iAxgblL6IXEGaZw/F3K//bSfoLBNw6oVjUTRD4q+KHA91LxzcHgkPClaw==",
+      "expectedSha512": "f8591f7120da121723ae31508802ad918cbe13dd42cf1c60807c311daac22497d98d94394d323d29d8857fdb4ba7772b6608b53b486a0d4e0201ca4935f94617",
+      "tag": "docs-stackline-find-parent-dir-v1.0.2"
+    }
+  ]
+}
