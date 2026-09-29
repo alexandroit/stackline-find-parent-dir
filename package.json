@@ -1,6 +1,6 @@
 {
   "name": "@stackline/find-parent-dir",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Find the nearest parent containing a file or directory with callback, sync, and Promise APIs",
   "type": "commonjs",
   "main": "./index.js",
@@ -97,6 +97,11 @@
     "typescript-3-9": "npm:typescript@3.9.10"
   },
   "keywords": [
+    "stackline",
+    "npm-package",
+    "find-parent-dir",
+    "typescript",
+    "nodejs",
     "find",
     "parent",
     "dir",
@@ -104,9 +109,7 @@
     "resolve",
     "walk",
     "filesystem",
-    "typescript",
     "zero-dependency",
-    "stackline",
     "parent-directory"
   ],
   "author": "Stackline Maintainers",

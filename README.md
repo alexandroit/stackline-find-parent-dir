@@ -1,17 +1,18 @@
 # @stackline/find-parent-dir
 
-> Find the nearest parent containing a file or directory with callback, sync, and Promise APIs
+> Find the nearest parent containing a file or directory with callback, sync, and Promise APIs.
 
 [![npm version](https://img.shields.io/npm/v/@stackline/find-parent-dir.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/find-parent-dir)
-[![license](https://img.shields.io/npm/l/@stackline/find-parent-dir.svg?style=flat-square)](https://github.com/alexandroit/stackline-find-parent-dir/blob/main/LICENSE)
-[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-find-parent-dir)
+[![license](https://img.shields.io/npm/l/@stackline/find-parent-dir.svg?style=flat-square)](https://github.com/alexandroit/stackline-find-parent-dir)
+[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-find-parent-dir-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-find-parent-dir)
+[![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/find-parent-dir/)
+[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
-**[Documentation](https://alexandro.net/docs/vanilla/find-parent-dir/)** |
-**[npm](https://www.npmjs.com/package/@stackline/find-parent-dir)** |
-**[Issues](https://github.com/alexandroit/stackline-find-parent-dir/issues)** |
-**[Repository](https://github.com/alexandroit/stackline-find-parent-dir)**
+**[Documentation](https://alexandro.net/docs/vanilla/find-parent-dir/)** | **[npm](https://www.npmjs.com/package/@stackline/find-parent-dir)** | **[Issues](https://github.com/alexandroit/stackline-find-parent-dir/issues)** | **[Repository](https://github.com/alexandroit/stackline-find-parent-dir)**
 
-**Package version:** `1.0.1`
+**Current package version:** `1.0.2`
+
+---
 
 ## Why this package?
 
@@ -24,7 +25,7 @@ TypeScript support.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/find-parent-dir@1.0.1` |
+| Package | `@stackline/find-parent-dir@1.0.2` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | ES module entry | `./index.mjs` |
@@ -159,25 +160,6 @@ npm run test:smoke
 
 Run `npm run verify` and inspect the package contents before release. Publish a new version through the [GitHub Actions publishing workflow](https://github.com/alexandroit/stackline-find-parent-dir/actions/workflows/publish.yml), using the SHA-512 digest of the reviewed tarball. Verify the exact published version, tarball integrity, and npm provenance after the run.
 
-## Community and Support
-
-<a id="support"></a>
-
-### Support
-
-- Node.js 12 through 24 are tested.
-- CommonJS and native ESM are tested.
-- TypeScript 3.9 and the current compiler are tested.
-- Linux, macOS, and Windows are covered in CI.
-- There are no runtime dependencies.
-
-Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-find-parent-dir/issues). Use the [security policy](https://github.com/alexandroit/stackline-find-parent-dir/blob/main/SECURITY.md) for vulnerability reports.
-
-- [Stackline / Alexandro.Net](https://alexandro.net/)
-- [GitHub](https://github.com/alexandroit)
-- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
-- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
-
 ## License
 
 <a id="license-and-attribution"></a>
@@ -187,3 +169,22 @@ Report reproducible package issues in the [issue tracker](https://github.com/ale
 MIT. The original copyright notice for Thorsten Lorenz is preserved in
 [LICENSE](https://github.com/alexandroit/stackline-find-parent-dir/blob/main/LICENSE). This project is an independent maintained continuation and
 is not affiliated with or endorsed by the original author.
+
+## Credits and original authors
+
+- Stackline Maintainers.
+- Thorsten Lorenz.
+- Copyright 2013 Thorsten Lorenz.
+- Stackline maintenance: [Alexandro Paixao Marques](https://www.linkedin.com/in/aleinfo/) and [Stackline contributors](https://github.com/alexandroit).
+
+Original copyright, license notices and contributor acknowledgements remain part of this distribution. Stackline maintenance does not replace authorship of the original work.
+
+## Community and Links
+
+- [Stackline website](https://alexandro.net/)
+- [GitHub projects](https://github.com/alexandroit)
+- [npm packages](https://www.npmjs.com/~alex360qc)
+- [Reddit community — r/Stackline](https://www.reddit.com/r/Stackline/)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+
+Use this repository's issue tracker for reproducible bugs and feature requests. Join r/Stackline for examples, usage questions and release discussions.
