@@ -10,7 +10,7 @@
 
 **[Documentation](https://alexandro.net/docs/vanilla/find-parent-dir/)** | **[npm](https://www.npmjs.com/package/@stackline/find-parent-dir)** | **[Issues](https://github.com/alexandroit/stackline-find-parent-dir/issues)** | **[Repository](https://github.com/alexandroit/stackline-find-parent-dir)**
 
-**Current package version:** `1.0.3`
+**Current package version:** `1.0.5`
 
 ---
 
@@ -25,7 +25,7 @@ TypeScript support.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/find-parent-dir@1.0.4` |
+| Package | `@stackline/find-parent-dir@1.0.5` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | ES module entry | `./index.mjs` |
