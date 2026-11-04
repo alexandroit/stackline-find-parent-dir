@@ -25,7 +25,7 @@ TypeScript support.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/find-parent-dir@1.0.3` |
+| Package | `@stackline/find-parent-dir@1.0.4` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | ES module entry | `./index.mjs` |
